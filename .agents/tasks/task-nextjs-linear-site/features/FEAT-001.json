@@ -1,0 +1,33 @@
+{
+  "id": "FEAT-001",
+  "type": "feat",
+  "description": "Scaffold the Next.js project with Tailwind CSS and create a complete Linear-style landing page with dark theme, hero section, features section, navigation, and footer.",
+  "status": "completed",
+  "steps": [
+    "Initialize a new Next.js project in /projects/sandbox/jvfhiwcj using 'npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm'. If the directory is not empty, handle by working with existing files or adjusting the approach.",
+    "Configure tailwind.config.ts with a custom dark theme: extend colors with purple/violet/blue gradient palette (matching Linear's aesthetic), add custom animations for fade-in, slide-up, and pulse-glow effects.",
+    "Set up app/layout.tsx with Inter font from next/font/google, dark background (bg-[#0A0A0F] or similar very dark purple-black), and proper metadata.",
+    "Create a Navbar component in src/components/Navbar.tsx: fixed position, glassmorphism background (backdrop-blur + semi-transparent bg), logo text, navigation links with hover animations (opacity transitions, subtle underline effects), and a CTA button with gradient border.",
+    "Create a Hero section component in src/components/Hero.tsx: large bold headline with gradient text (purple to blue), descriptive subheadline in muted gray, two CTA buttons (primary with gradient fill, secondary with border-only ghost style), subtle background radial gradient or glow orb behind the text.",
+    "Create a Features section component in src/components/Features.tsx: section title, grid of 3-6 feature cards. Each card has: dark card background with subtle border (border-white/10), icon or emoji, title, description, hover effect that increases border brightness or adds a subtle glow. Use glassmorphism style.",
+    "Create a Footer component in src/components/Footer.tsx: minimal footer with links in columns, muted text colors, subtle top border, consistent with the overall dark theme.",
+    "Assemble all components in src/app/page.tsx: Navbar at top, Hero section, Features section, Footer at bottom. Add a subtle animated gradient orb or mesh background element for visual interest.",
+    "Add global styles in src/app/globals.css: smooth scrolling, custom scrollbar styling for dark theme, any additional utility classes needed for glassmorphism or gradient text effects.",
+    "Ensure fully responsive design: test that layout works well from mobile (375px) to desktop (1440px+). Use responsive Tailwind classes (sm:, md:, lg:) throughout."
+  ],
+  "acceptance_criteria": [
+    "Running 'npm run build' completes without errors",
+    "The page renders a dark-themed landing page with Linear-style aesthetics",
+    "Navigation bar is present with glassmorphism effect",
+    "Hero section displays gradient text headline and CTA buttons",
+    "Features section shows cards with hover effects",
+    "Footer is present with proper styling",
+    "Design is responsive across breakpoints",
+    "Smooth CSS transitions and animations are applied to interactive elements"
+  ],
+  "verification": [
+    "cd /projects/sandbox/jvfhiwcj && npm run build"
+  ],
+  "blocked_reason": null,
+  "findings": "create-next-app could not run in a non-empty directory, so the project was manually scaffolded with package.json and all config files. Used Tailwind CSS v4 with @tailwindcss/postcss plugin and @theme directive in globals.css for custom animations. Build completes successfully with Next.js 15.5.18."
+}

@@ -1,0 +1,16 @@
+{
+  "project_type": "Next.js landing page with Linear-style design",
+  "language": "TypeScript",
+  "build_system": "Next.js with npm",
+  "test_framework": "None (static landing page)",
+  "build_command": "npm run build",
+  "test_command": "npm run build",
+  "verification_instructions": "Run npm run build to verify the project compiles without errors",
+  "snapshot_or_generated_files": null,
+  "setup_instructions": "cd /projects/sandbox/jvfhiwcj && npm install",
+  "environment_constraints": "Node.js v22 available, full internet access (OPEN_INTERNET), npm/pnpm/yarn available",
+  "contribution_requirements": "None - greenfield project",
+  "key_patterns": "Next.js App Router, Tailwind CSS v4, TypeScript, Inter font from next/font/google, dark theme with purple/blue gradient accents, glassmorphism, smooth transitions",
+  "relevant_files": [],
+  "directory_structure": "Standard Next.js App Router structure: app/ for pages and layouts, components/ for reusable UI components, public/ for static assets, tailwind.config.ts for theme configuration"
+}
