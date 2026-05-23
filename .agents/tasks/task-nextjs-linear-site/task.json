@@ -1,0 +1,7 @@
+{
+  "task_id": "task-nextjs-linear-site",
+  "task_description": "Create a Next.js landing page with Linear.app-style design: dark theme, clean typography, gradient accents, glassmorphism, smooth animations, responsive layout",
+  "status": "in_progress",
+  "feature_order": ["FEAT-001"],
+  "blocked_reason": null
+}
