@@ -4,7 +4,11 @@ import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import GlowOrb from "@/components/ui/GlowOrb";
 
-export default function Home() {
+/**
+ * Home page assembling all landing page sections.
+ * Includes animated background gradient orbs for visual depth.
+ */
+export default function Home(): React.ReactElement {
   return (
     <div className="min-h-screen text-white relative">
       {/* Animated background gradient orbs */}

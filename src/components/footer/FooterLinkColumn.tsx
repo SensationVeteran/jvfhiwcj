@@ -1,11 +1,18 @@
 import { ROUTES } from "@/lib/routes";
 
+/** Props for the FooterLinkColumn component. */
 interface FooterLinkColumnProps {
+  /** Category heading displayed above the links. */
   title: string;
+  /** Array of link labels rendered as a list. */
   links: string[];
 }
 
-export default function FooterLinkColumn({ title, links }: FooterLinkColumnProps) {
+/**
+ * A single footer link column with a category title and list of links.
+ * Used to organize footer navigation into logical groups.
+ */
+export default function FooterLinkColumn({ title, links }: FooterLinkColumnProps): React.ReactElement {
   return (
     <div>
       <h4 className="text-white font-medium text-sm mb-4">{title}</h4>

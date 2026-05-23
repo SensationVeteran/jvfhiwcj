@@ -1,19 +1,32 @@
-import type { NavLink } from "@/types";
+import { cn } from "@/lib/cn";
 import Button from "@/components/ui/Button";
+import type { NavLink } from "@/types";
 
+/** Props for the MobileNav component. */
 interface MobileNavProps {
+  /** Array of navigation links to display in the mobile menu. */
   links: NavLink[];
+  /** Whether the mobile menu is currently open. */
   open: boolean;
+  /** Callback to toggle the menu open/closed. */
   onToggle: () => void;
+  /** Callback to close the menu (e.g., after link click). */
   onClose: () => void;
 }
 
-export default function MobileNav({ links, open, onToggle, onClose }: MobileNavProps) {
+/**
+ * Mobile navigation menu with a hamburger toggle button and expandable link panel.
+ * Hidden on desktop viewports. Supports keyboard dismiss via parent Escape handler.
+ */
+export default function MobileNav({ links, open, onToggle, onClose }: MobileNavProps): React.ReactElement {
   return (
     <>
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden text-gray-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 rounded"
+        className={cn(
+          "md:hidden transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 rounded",
+          open ? "text-white" : "text-gray-400 hover:text-white"
+        )}
         onClick={onToggle}
         aria-label="Toggle menu"
         aria-expanded={open}

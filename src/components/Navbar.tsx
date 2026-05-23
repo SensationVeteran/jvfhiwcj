@@ -2,17 +2,24 @@
 
 import { useState, useEffect } from "react";
 import { NAV_LINKS } from "@/lib/constants";
+import { useScrollLock } from "@/hooks/useScrollLock";
 import Logo from "@/components/navbar/Logo";
 import DesktopNav from "@/components/navbar/DesktopNav";
 import MobileNav from "@/components/navbar/MobileNav";
 
-export default function Navbar() {
+/**
+ * Fixed-position navigation bar with glassmorphism styling.
+ * Includes desktop inline links and a responsive mobile menu with scroll lock.
+ */
+export default function Navbar(): React.ReactElement {
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  useScrollLock(mobileOpen);
 
   useEffect(() => {
     if (!mobileOpen) return;
 
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = (e: KeyboardEvent): void => {
       if (e.key === "Escape") {
         setMobileOpen(false);
       }

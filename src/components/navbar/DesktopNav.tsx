@@ -1,11 +1,17 @@
-import type { NavLink } from "@/types";
 import Button from "@/components/ui/Button";
+import type { NavLink } from "@/types";
 
+/** Props for the DesktopNav component. */
 interface DesktopNavProps {
+  /** Array of navigation links to display. */
   links: NavLink[];
 }
 
-export default function DesktopNav({ links }: DesktopNavProps) {
+/**
+ * Desktop navigation bar section with inline links and a CTA button.
+ * Hidden on mobile viewports via responsive classes.
+ */
+export default function DesktopNav({ links }: DesktopNavProps): React.ReactElement {
   return (
     <>
       <div className="hidden md:flex items-center gap-8">

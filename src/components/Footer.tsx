@@ -4,7 +4,11 @@ import Logo from "@/components/navbar/Logo";
 import FooterLinkColumn from "@/components/footer/FooterLinkColumn";
 import FooterBottom from "@/components/footer/FooterBottom";
 
-export default function Footer() {
+/**
+ * Site footer with categorized link columns and legal information.
+ * Renders a brand logo, tagline, grouped navigation links, and copyright notice.
+ */
+export default function Footer(): React.ReactElement {
   return (
     <footer className="border-t border-white/10 py-12 px-6">
       <Container>
