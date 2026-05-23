@@ -1,8 +1,5 @@
-const footerLinks = {
-  Product: ["Features", "Integrations", "Pricing", "Changelog", "Roadmap"],
-  Company: ["About", "Blog", "Careers", "Press", "Contact"],
-  Resources: ["Documentation", "API Reference", "Community", "Support", "Status"],
-};
+import { FOOTER_LINKS, SITE_CONFIG } from "@/lib/constants";
+import { ROUTES } from "@/lib/routes";
 
 export default function Footer() {
   return (
@@ -12,22 +9,22 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="text-xl font-bold text-white tracking-tight mb-4">
-              Linear<span className="text-purple-400">.</span>
+              {SITE_CONFIG.name}<span className="text-purple-400">.</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Build products at the speed of thought.
+              {SITE_CONFIG.tagline}.
             </p>
           </div>
 
           {/* Link columns */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="text-white font-medium text-sm mb-4">{category}</h4>
+          {FOOTER_LINKS.map((section) => (
+            <div key={section.category}>
+              <h4 className="text-white font-medium text-sm mb-4">{section.category}</h4>
               <ul className="space-y-2">
-                {links.map((link) => (
+                {section.links.map((link) => (
                   <li key={link}>
                     <a
-                      href="#"
+                      href={ROUTES.HOME}
                       className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
                     >
                       {link}
@@ -42,13 +39,13 @@ export default function Footer() {
         {/* Bottom row */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-xs">
-            &copy; {new Date().getFullYear()} Linear. All rights reserved.
+            &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-gray-500 hover:text-white transition-colors duration-300 text-xs">
+            <a href={ROUTES.PRIVACY} className="text-gray-500 hover:text-white transition-colors duration-300 text-xs">
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-500 hover:text-white transition-colors duration-300 text-xs">
+            <a href={ROUTES.TERMS} className="text-gray-500 hover:text-white transition-colors duration-300 text-xs">
               Terms of Service
             </a>
           </div>
