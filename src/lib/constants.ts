@@ -1,6 +1,7 @@
 import type { NavLink, Feature, FooterSection, SiteConfig } from "@/types";
 import { ROUTES } from "./routes";
 
+/** Global site configuration. */
 export const SITE_CONFIG: SiteConfig = {
   name: "Linear",
   tagline: "Build products at the speed of thought",
@@ -8,6 +9,7 @@ export const SITE_CONFIG: SiteConfig = {
     "Streamline your workflow with a tool designed for modern teams. Fast, intuitive, and beautifully crafted for the way you work.",
 };
 
+/** Primary navigation links rendered in the navbar. */
 export const NAV_LINKS: NavLink[] = [
   { label: "Features", href: ROUTES.FEATURES },
   { label: "Pricing", href: ROUTES.PRICING },
@@ -15,6 +17,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Blog", href: ROUTES.BLOG },
 ];
 
+/** Feature items displayed in the features grid section. */
 export const FEATURES: Feature[] = [
   {
     icon: "\u26A1",
@@ -54,6 +57,7 @@ export const FEATURES: Feature[] = [
   },
 ];
 
+/** Footer link sections organized by category. */
 export const FOOTER_LINKS: FooterSection[] = [
   {
     category: "Product",

@@ -1,16 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { NAV_LINKS } from "@/lib/constants";
 import Logo from "@/components/navbar/Logo";
 import DesktopNav from "@/components/navbar/DesktopNav";
 import MobileNav from "@/components/navbar/MobileNav";
-
-const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#" },
-  { label: "Docs", href: "#" },
-  { label: "Blog", href: "#" },
-];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -32,9 +26,9 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/5 border-b border-white/10">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Logo />
-        <DesktopNav links={navLinks} />
+        <DesktopNav links={NAV_LINKS} />
         <MobileNav
-          links={navLinks}
+          links={NAV_LINKS}
           open={mobileOpen}
           onToggle={() => setMobileOpen(!mobileOpen)}
           onClose={() => setMobileOpen(false)}

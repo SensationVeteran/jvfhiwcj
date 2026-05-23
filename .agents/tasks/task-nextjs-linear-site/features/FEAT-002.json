@@ -1,0 +1,29 @@
+{
+  "id": "FEAT-002",
+  "type": "feat",
+  "description": "Component decomposition - break large components into small, single-responsibility atoms with typed props interfaces.",
+  "status": "in_progress",
+  "steps": [
+    "Create src/components/ui/Button.tsx - Reusable button with variants (primary/secondary) and sizes (sm/md/lg)",
+    "Create src/components/ui/GradientText.tsx - Gradient text wrapper component",
+    "Create src/components/ui/Card.tsx - Glassmorphism card with hover effects",
+    "Create src/components/ui/GlowOrb.tsx - Animated background glow orb",
+    "Create src/components/ui/SectionHeader.tsx - Reusable section header with title + subtitle",
+    "Create src/components/layout/Container.tsx - Max-width container wrapper",
+    "Extract src/components/navbar/Logo.tsx, DesktopNav.tsx, MobileNav.tsx from Navbar.tsx",
+    "Extract src/components/footer/FooterLinkColumn.tsx, FooterBottom.tsx from Footer.tsx",
+    "Refactor Hero.tsx, Features.tsx, Footer.tsx, Navbar.tsx, and page.tsx to use these new atomic components",
+    "Every component file exports ONE default component with typed props interface"
+  ],
+  "acceptance_criteria": [
+    "npm run build completes without errors",
+    "All new component files export a single default component with typed props interface",
+    "Existing page appearance and behavior is preserved",
+    "Components are properly decomposed into single-responsibility atoms"
+  ],
+  "verification": [
+    "npm run build"
+  ],
+  "blocked_reason": null,
+  "findings": null
+}

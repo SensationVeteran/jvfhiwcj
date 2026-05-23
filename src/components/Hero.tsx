@@ -1,3 +1,5 @@
+import { SITE_CONFIG } from "@/lib/constants";
+import { ROUTES } from "@/lib/routes";
 import GradientText from "@/components/ui/GradientText";
 import GlowOrb from "@/components/ui/GlowOrb";
 import Button from "@/components/ui/Button";
@@ -15,19 +17,18 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto animate-fade-in">
         <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
-          <GradientText>Build products at the speed of thought</GradientText>
+          <GradientText>{SITE_CONFIG.tagline}</GradientText>
         </h1>
         <p className="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-          Streamline your workflow with a tool designed for modern teams.
-          Fast, intuitive, and beautifully crafted for the way you work.
+          {SITE_CONFIG.description}
         </p>
 
         {/* CTA Buttons */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button href="#" variant="primary" size="lg">
+          <Button href={ROUTES.HOME} variant="primary" size="lg">
             Start Building
           </Button>
-          <Button href="#features" variant="secondary" size="lg">
+          <Button href={ROUTES.FEATURES} variant="secondary" size="lg">
             Learn More
           </Button>
         </div>
